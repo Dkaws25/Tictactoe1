@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tictac-app
+  namespace: webapps
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: tictac
+  template:
+    metadata:
+      labels:
+        app: tictac
+    spec:
+      imagePullSecrets:
+        - name: ecr-secret
+      containers:
+        - name: tictac
+          image: dkaws25/dkdock:1.5
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+
+###
