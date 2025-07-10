@@ -17,7 +17,7 @@ spec:
         - name: ecr-secret
       containers:
         - name: tictac
-          image: dkaws25/dkdock:12
+          image: dkaws25/dkdock:25
           imagePullPolicy: Always
           ports:
             - containerPort: 80
